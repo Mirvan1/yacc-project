@@ -157,7 +157,7 @@ relational_exp: arithm_e LESS arithm_e   	 {$$ = check($1,$3,1);}
       	| arithm_e DEQ arithm_e     {$$ = check($1,$3,5);}
       	| arithm_e NOT_EQ arithm_e     {$$ = check($1,$3,6);}
 	| arithm_e AND arithm_e		{$$ = check($1,$3,7);}
-
+	| arithm_e OR arithm_e		{$$ = check($1,$3,8);}
       | IDENTIFIER EQUAL relational_exp     {loc = hat($1);if(loc!=-1) { st[loc].value = $3; } else { yyerror(error);}}
       	| TRUE1   		 {$$=1;}
       	| FALSE1   		 {$$=0;}
@@ -338,6 +338,8 @@ case 5: return (a==b);
 case 6: return (a!=b);
      	break;
 case 7: return (a&&b);
+     	break;
+case 8: return (a&&b);
      	break;
 
 }
