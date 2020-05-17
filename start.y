@@ -339,7 +339,7 @@ case 6: return (a!=b);
      	break;
 case 7: return (a&&b);
      	break;
-case 8: return (a&&b);
+case 8: return (a||b);
      	break;
 
 }
